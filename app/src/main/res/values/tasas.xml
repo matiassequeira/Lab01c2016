@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="monto0">0</string>
+    <string name="monto5000">5000</string>
+    <string name="monto99999">99999</string>
+    <string name="cant_dias_tasa">30</string>
+    <string name="tasa1">0.25</string>
+    <string name="tasa2">0.275</string>
+    <string name="tasa3">0.3</string>
+    <string name="tasa4">0.323</string>
+    <string name="tasa5">0.35</string>
+    <string name="tasa6">0.385</string>
+</resources>

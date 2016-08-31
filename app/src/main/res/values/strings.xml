@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Lab01c2016</string>
+    <string name="titulo">Calcular Plazo Fijo</string>
+    <string name="email">Correo Electronico</string>
+    <string name="cuit">CUIT</string>
+    <string name="monto">Monto a Invertir</string>
+    <string name="dias">Cantidad de días</string>
+    <string name="retorno">Retorno</string>
+    <string name="txtBoton">Hacer plazo fijo</string>
+    <string name="txtCheckBox">Renovar automaticamente</string>
+    <string name="cantDiasSeleccionados">1</string>
+    <string name="pesosRetorno">$0.00</string>
+    <string name="mensaje"></string>
+</resources>
