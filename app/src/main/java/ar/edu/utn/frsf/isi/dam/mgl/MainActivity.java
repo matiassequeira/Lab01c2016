@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Double capital;
     private EditText importe;
     private TextView pesosRetorno;
-    private int dias;
+    private Double dias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         pesosRetorno = (TextView) findViewById(R.id.pesosRetorno);
 
-        dias=1;
+        dias=1.0;
         capital=0.0;
 
     }
@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String strCuit= cuit.getText().toString();
 
         String strImporte= importe.getText().toString();
-
+        if(strImporte.equals("")){
+            return ;
+        }
         TextView mensaje = (TextView) findViewById(R.id.mensaje);
 
         capital = Double.parseDouble(strImporte);
@@ -71,9 +73,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         diasSeleccionados.setText(String.valueOf(progress));
         diasSeleccionados.setVisibility(View.VISIBLE);
 
-        dias=progress;
+        dias= (double) progress;
         if (capital!=null || capital !=0 ) {
-            Double retorno = calcularRetorno(capital, progress);
+            Double retorno = calcularRetorno(capital, (double)progress);
             pesosRetorno.setText(String.valueOf(retorno));
             pesosRetorno.setVisibility(View.VISIBLE);
         }
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onStopTrackingTouch(SeekBar seekBar) {
     }
 
-    private Double calcularRetorno(Double importe, int dias) {
+    private Double calcularRetorno(Double importe, Double dias) {
         Double tasa;
 
         double tasa1 = Double.parseDouble(getResources().getString(R.string.tasa1));
@@ -115,13 +117,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             tasa=tasa6;
         else  tasa=0.0;
 
-        return (importe* (Math.pow(1+tasa/100,dias/360) - 1));
+        return (importe * (Math.pow( 1+(tasa) , (dias/360)) - 1));
     }
 
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
         if(!hasFocus){
-            capital = Double.parseDouble(importe.getText().toString());
+            String strImporte= importe.getText().toString();
+            if(strImporte.equals("")){
+                return ;
+            }
+            capital = Double.parseDouble(strImporte);
             Double retorno = calcularRetorno(capital, dias);
             pesosRetorno.setText(String.valueOf(retorno));
             pesosRetorno.setVisibility(View.VISIBLE);
