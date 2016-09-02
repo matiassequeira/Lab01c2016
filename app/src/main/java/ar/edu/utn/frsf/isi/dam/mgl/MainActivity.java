@@ -58,9 +58,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mensaje.setVisibility(View.VISIBLE);
         }
         else{
+            String strPesosRetorno= pesosRetorno.getText().toString();
 
-
-            mensaje.setText("Plazo fijo realizado. "+"Recibirá "+pesosRetorno+" al vencimiento!");
+            mensaje.setText("Plazo fijo realizado. "+"Recibirá "+ strPesosRetorno +" al vencimiento!");
             int verde = getResources().getColor(R.color.verde);
             mensaje.setTextColor(verde);
             mensaje.setVisibility(View.VISIBLE);
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             tasa=tasa6;
         else  tasa=0.0;
 
-        return (importe * (Math.pow( 1+(tasa) , (dias/360)) - 1));
+        return Math.rint((importe * (Math.pow( 1+(tasa) , (dias/360)) - 1))*100)/100;
     }
 
     @Override

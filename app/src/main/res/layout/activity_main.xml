@@ -72,8 +72,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/dias"
-        android:layout_below="@id/editMonto"
-        android:layout_marginTop="10dp"/>
+        android:layout_below="@+id/editMonto"
+        android:layout_alignParentStart="true" />
 
     <SeekBar
         android:layout_width="match_parent"
@@ -83,7 +83,7 @@
         android:progress="1"
         android:layout_below="@id/dias"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="5dp"/>
 
 
     <TextView
@@ -94,7 +94,7 @@
         android:id="@+id/txtDiasSeleccionados"
         android:layout_below="@id/seekBarDias"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -134,6 +134,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/mensaje"
         android:id="@+id/mensaje"
-        android:layout_below="@id/button"/>
+        android:layout_below="@+id/button" />
 
 </RelativeLayout>
