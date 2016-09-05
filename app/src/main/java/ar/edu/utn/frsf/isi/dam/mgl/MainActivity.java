@@ -69,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        importe.clearFocus();
+
         TextView diasSeleccionados = (TextView) findViewById(R.id.txtDiasSeleccionados);
         diasSeleccionados.setText(String.valueOf(progress));
         diasSeleccionados.setVisibility(View.VISIBLE);
